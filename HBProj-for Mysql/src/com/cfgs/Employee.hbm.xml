@@ -1,0 +1,25 @@
+<!-- <?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> -->
+
+<hibernate-mapping>
+    <class name="com.test.domain.EmpDetails" table="Employee">
+        <id name="no" column="EID"/>
+        <property name="fname"/>
+        <property name="lname"/>
+        <property name="mail" />
+    <!--    <id name="no">
+           <column name="EID"/>
+       </id> -->
+      <!--  <property name="fname">
+         <column name="FIRSTNAME"/>
+       </property>
+       <property name="lname">
+         <column name="LASTNAME"/>
+       </property>
+       <property name="mail">
+         <column name="EMAIL"/>
+       </property> -->
+</class> 
+</hibernate-mapping>

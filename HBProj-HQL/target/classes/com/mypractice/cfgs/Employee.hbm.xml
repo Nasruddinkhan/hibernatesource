@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mypractice.domain.EmpDetails" table="Employee">
+        <id name="no" column="EID"/>
+        <property name="fname" column="FIRSTNAME" length="15" type="string"  not-null="true"/>
+        <property name="lname" column="LASTNAME" length="10" type="string" not-null="true"/>
+        <property name="mail" column="EMAIL" length="30" type="string"  />
+ </class>
+  
+  <query  name="HQL_GET_EMP_DETAILS_BY_EMAIL">
+   <![CDATA[
+        from EmpDetails where no>=:start and no<=:end
+    ]]>
+ </query>
+ 
+ <query  name="HQL_UPDATE_EMAIL_BY_NO">
+   update EmpDetails set mail=:newMail where no=:oldNo
+ </query>
+ 
+ 
+</hibernate-mapping>

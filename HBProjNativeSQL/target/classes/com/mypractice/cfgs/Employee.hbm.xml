@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> -->
+
+<hibernate-mapping>
+    <class name="com.mypractice.domain.EmpDetails" table="Employee">
+        <id name="no" column="EID"/> 
+        <property name="fname" column="FIRSTNAME" />
+        <property name="lname" column="LASTNAME" />
+        <property name="mail" column="EMAIL" />
+ </class> 
+ <sql-query name="GET_EMPS_BY_EMAIL">
+  <return class="com.mypractice.domain.EmpDetails"/>  
+   <![CDATA[
+         select * from Employee where email like :dmn
+   ]]>
+  </sql-query>
+ <sql-query name="GET_DETAILS_BY_LASTNAME">
+   <return-scalar column="EID" type="int"/>
+   <return-scalar column="EMAIL" type="string"/>
+   <![CDATA[
+    SELECT EID,EMAIL FROM EMPLOYEE WHERE LASTNAME LIKE :title
+   ]]>
+  </sql-query>
+  <sql-query name="DELETE_EMPS_BY_EMAIL">
+    <![CDATA[
+       DELETE FROM EMPLOYEE WHERE EMAIL LIKE :domain
+    ]]>
+</sql-query>
+</hibernate-mapping>
+

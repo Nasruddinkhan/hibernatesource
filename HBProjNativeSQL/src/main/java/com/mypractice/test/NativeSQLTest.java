@@ -111,7 +111,7 @@ System.out.println("Emp count"+list2.get(0));
 		 Transaction tx1=null;
 		  try{
 		    tx1=ses.beginTransaction();
-		     int coumypractice=query1.executeUpdate();
+		     int coumypractice=query2.executeUpdate();
 		   tx1.commit();
 		    System.out.println("No.of records that are effected"+coumypractice);
 		   }//try

@@ -1,0 +1,17 @@
+<!-- <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 
+	3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> -->
+
+<hibernate-mapping>
+	<class name="com.mypractice.domain.EmpDetails" table="Employee">
+		<id name="no" column="EID" />
+		<property name="fname" column="FIRSTNAME" />
+		<property name="lname" column="LASTNAME" />
+		<property name="mail" column="EMAIL" />
+	</class>
+	<sql-query name="EMP_DETAILS" callable="true">
+		<return class="com.mypractice.domain.EmpDetails" />
+		{?= call EMP_DETAILS_BY_INITCHARS(?)}
+	</sql-query>
+
+</hibernate-mapping>
+

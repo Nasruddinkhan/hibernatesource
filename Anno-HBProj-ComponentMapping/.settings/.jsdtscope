@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathemypracticery excluding="**/bower_componemypractices/*|**/node_modules/*|**/*.min.js" kind="src" path="src/main/webapp"/>
+	<classpathemypracticery kind="con" path="org.eclipse.wst.jsdt.launching.JRE_COmypracticeAINER"/>
+	<classpathemypracticery kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
+		<attributes>
+			<attribute name="hide" value="true"/>
+		</attributes>
+	</classpathemypracticery>
+	<classpathemypracticery kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
+	<classpathemypracticery kind="output" path=""/>
+</classpath>

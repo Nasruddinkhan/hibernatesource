@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HBProj21-MavenHQLCURDApp">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <property name="comypracticeext-root" value="HBProj21-MavenHQLCURDApp"/>
+        <property name="java-output-path" value="/HBProj33-InhMapping-TPCH/target/classes"/>
+        <property name="comypracticeext-root" value="HBProj21-MavenHQLCURDApp"/>
+        <property name="context-root" value="HBProj21-MavenHQLCURDApp"/>
+    </wb-module>
+</project-modules>

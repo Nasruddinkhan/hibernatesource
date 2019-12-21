@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mypractice.domain.Person" table="in_persons4">
+        <id name="id">
+         <generator class="increment"/>
+        </id>
+         <property name="name" />
+         <property name="company" />
+    </class>
+     <class name="com.mypractice.domain.Employee" table="in_employees4">
+        <id name="id">
+         <generator class="increment"/>
+        </id>
+         <property name="name" />
+         <property name="company" />
+         <property name="department"/>
+         <property name="salary"/>
+     </class>
+     <class name="com.mypractice.domain.Customer" table="in_customers4">
+        <id name="id">
+         <generator class="increment"/>
+        </id>
+         <property name="name" />
+         <property name="company" />
+         <property name="address"/>
+     </class>
+     
+     
+</hibernate-mapping>
+<!-- create table in_persons4(id number(5) primary key,name varchar2(20),company varchar2(20));
+ create table in_employees4(id number(5) primary key,name varchar2(20),company varchar2(20),departmemypractice number(7),salary number(8));
+ create table in_customers4(id number(5) primary key,name varchar2(20),company varchar2(20),address varchar2(20));
+ -->

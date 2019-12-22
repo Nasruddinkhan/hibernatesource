@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.Project" table="projects">
+		<id name="proid" />
+		<property name="proname" />
+		<idbag name="programmers" table="programmers_projects" lazy="true"
+			cascade="all" inverse="false">
+			<collection-id column="prgmr_proj_indx" type="int">
+				<generator class="increment" />
+			</collection-id>
+			<key column="project_id" />
+			<many-to-many column="programmer_id" class="com.mypractice.domain.Programmer"/>
+		</idbag>
+	</class>
+</hibernate-mapping>
+
+

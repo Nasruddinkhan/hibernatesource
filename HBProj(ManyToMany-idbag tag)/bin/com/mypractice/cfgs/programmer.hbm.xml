@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.Programmer" table="programmers">
+		<id name="pid" />
+		<property name="pname" />
+		<property name="salary" />
+		<set name="projects" table="programmers_projects" cascade="all" lazy="extra" >
+			<key column="programmer_id" />
+			<many-to-many class="com.mypractice.domain.Project" column="project_id" />
+		</set>
+	</class>
+</hibernate-mapping>
+<!-- 
+  create table programmers(pid number(5) primary key,pname varchar2(20),
+                           salary number(5));
+  create table projects(proid number(5) primary key,proname varchar2(20));
+
+ create table programmers_projects(programmer_id number(5) references Programmers(pid),
+                                   project_id number(5) references Projects(proid),
+                                   primary key(programmer_id,project_id));
+                           
+
+ -->

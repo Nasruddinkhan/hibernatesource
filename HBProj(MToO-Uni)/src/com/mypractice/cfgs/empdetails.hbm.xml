@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.EmpDetails">
+		<id name="eno" >
+		  <generator class="increment"/>
+		</id>
+		<property name="ename" />
+		<property name="salary" />
+		<many-to-one name="dept" class="com.mypractice.domain.Department" column="deptno" cascade="all" lazy="no-proxy" />
+	</class>
+</hibernate-mapping>
+
+

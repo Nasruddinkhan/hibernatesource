@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.mypractice.domain.Department">
+		<id name="deptno">
+		  <generator class="sequence">
+		     <param name="sequence">deptno_seq</param>
+		  </generator>
+		</id>
+		<property name="deptname"/>
+		<property name="depthead"/>
+	</class>
+</hibernate-mapping>
+<!-- create table department (deptno number(5) primary key,
+                              deptname varchar2(20),
+                              depthead varchar2(20));
+     create table empdetails(eno number(6) primary key,
+                             ename varchar2(20),
+                             salary number(10),
+                             deptno number(5) references department(deptno)); -->
+                              

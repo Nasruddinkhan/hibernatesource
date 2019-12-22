@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.User" table="user_table3">
+		<id name="userId" column="user_id" />
+		<property name="firstName" column="first_name" />
+		<map name="phones" cascade="all-delete-orphan" lazy="true">
+			<key column="unid" />
+			<map-key column="map_indx" type="java.lang.String" />
+			<one-to-many class="com.mypractice.domain.PhoneNumber" />
+		</map>
+	</class>
+</hibernate-mapping>
+<!-- create table user_table3(user_id number(5) primary key, first_name varchar2(20)); 
+	create table phone_numbers3(phone number(11) primary key, number_type varchar2(20), 
+	unid number(5) references user_table3(user_id), map_indx varchar2(10)); -->
+  

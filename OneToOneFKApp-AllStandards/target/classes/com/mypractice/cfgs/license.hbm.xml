@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.License">
+		<id name="lid">
+			<generator class="sequence">
+				<param name="sequence_name">license_id</param>
+			</generator>
+		</id>
+		<property name="type" />
+		<property name="validFrom"/>
+		<property name="validTo" />
+		<many-to-one name="licenseHolder" class="com.mypractice.domain.Person"
+			column="license_holder" unique="true" not-null="true" cascade="all"
+			lazy="proxy" />
+	</class>
+ <query name="GET_ALL_LICENSE_DETAILS">
+   from License order by licenseHolder.pid
+ </query>	
+ <sql-query name="GET_PERSON_DETAILS_WITHOUT_LICENSE">
+    <return class="com.mypractice.domain.Person"/>
+    <![CDATA[
+      select p.pid,p.firstname,p.lastname,p.age from Person p where not exists(select * from license l where l.license_holder=p.pid)
+     ]]>
+ </sql-query>
+</hibernate-mapping>
+

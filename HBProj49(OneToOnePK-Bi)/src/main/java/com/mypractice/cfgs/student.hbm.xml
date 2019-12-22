@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mypractice.domain.Student" table="student_Tab">
+		<id name="sid">
+			<generator class="increment" />
+		</id>
+		<property name="sname" />
+		<property name="address" />
+		<one-to-one name="libraryDetails" class="com.mypractice.domain.LibraryMembership"
+			cascade="all-delete-orphan" lazy="proxy" />
+	</class>
+	
+
+</hibernate-mapping>
+<!-- create table student_Tab(sid number(5) primary key, sname varchar2(20), 
+	address varchar2(20));
+	 create table lib_membership(lid number(5) primary 
+	key, doj date); -->
